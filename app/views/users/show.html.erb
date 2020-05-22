@@ -2,7 +2,7 @@
   <div class="user-page-wrapper">
     <div class="user-data">
       <div class="image">
-        <%= image_tag '/'%>
+        <%= image_tag "#{@user.image}" %>
       </div>
       <div class="explanation">
         <span class="username"><%= @user.name %></span>

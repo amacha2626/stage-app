@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :caption, length: { maximum: 200 }
+
+  mount_uploader :image, ImageUploader
 end

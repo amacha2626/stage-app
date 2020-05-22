@@ -1,5 +1,6 @@
 <div class="edit-form">
   <%= form_with model: @user, local: true do |form| %>
+    <%= form.file_field :image %>
     <p>
       ユーザー名<br>
       <%= form.text_field :name %>
