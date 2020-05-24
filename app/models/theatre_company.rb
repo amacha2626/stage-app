@@ -1,0 +1,2 @@
+class TheatreCompany < ApplicationRecord
+end
