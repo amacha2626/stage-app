@@ -1,0 +1,23 @@
+<div class="edit-form">
+  <%= form_with model: @user, local: true do |form| %>
+    <%= form.file_field :image %>
+    <p>
+      ユーザー名<br>
+      <%= form.text_field :name %>
+    </p>
+    <p>
+      ユーザーID<br>
+      <%= form.text_field :username %>
+    </p>
+    <p>
+      メールアドレス<br>
+      <%= form.email_field :email %>
+    </p>
+    <p>
+      自己紹介(200文字以内)<br>
+      <%= form.text_area :caption %>
+    </p>
+    <br>
+    <%= form.submit %>
+  <% end %>
+</div>
