@@ -11,9 +11,14 @@
       </div>
       <% if user_signed_in? %>
         <%= link_to edit_user_path(current_user.id) do %>
-          <p class="edit">プロフィール編集</p>
+          <p class="profile-btn edit">プロフィール編集</p>
+        <% end %>
+      <% else %>
+        <%= link_to edit_user_path(current_user.id) do %>
+          <p class="profile-btn follow">フォローする</p>
         <% end %>
       <% end %>
+      <p class="regist-theatre-company">劇団を登録する</p>
     </div>
   </div>
 </div>
