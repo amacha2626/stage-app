@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_161250) do
+ActiveRecord::Schema.define(version: 2020_05_22_150637) do
+
+  create_table "theatre_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "name_kana", null: false
+    t.integer "postal_code", null: false
+    t.string "prefecture", null: false
+    t.string "address", null: false
+    t.string "website"
+    t.integer "establish"
+    t.bigint "member_id"
+    t.text "profile"
+    t.string "contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_theatre_companies_on_member_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -29,4 +45,5 @@ ActiveRecord::Schema.define(version: 2020_05_21_161250) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "theatre_companies", "users", column: "member_id"
 end
