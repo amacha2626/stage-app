@@ -11,6 +11,7 @@ class CreateTheatreCompanies < ActiveRecord::Migration[5.2]
       t.references :member, foreign_key: { to_table: :users}
       t.text :profile
       t.string :contact
+      t.references :founder, foreign_key: { to_table: :users}, null: false
 
       t.timestamps
     end

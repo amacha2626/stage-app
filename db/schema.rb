@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 2020_05_22_150637) do
     t.bigint "member_id"
     t.text "profile"
     t.string "contact"
+    t.bigint "founder_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["founder_id"], name: "index_theatre_companies_on_founder_id"
     t.index ["member_id"], name: "index_theatre_companies_on_member_id"
   end
 
@@ -45,5 +47,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_150637) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "theatre_companies", "users", column: "founder_id"
   add_foreign_key "theatre_companies", "users", column: "member_id"
 end
