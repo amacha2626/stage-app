@@ -18,7 +18,13 @@
           <p class="profile-btn follow">フォローする</p>
         <% end %>
       <% end %>
-      <%= link_to '劇団を登録する', new_theatrecompany_path, class: "regist-theatre-company" %>
+      <div class="regist-theatre-company-right">
+        <% @theatrecompanies.each do |theatrecompany| %>
+          <%= link_to theatrecompany.name, theatrecompany_path(theatrecompany.id), class: "belongs-link"%>
+        <% end %>
+        所属<br>
+        <%= link_to '劇団を登録する', new_theatrecompany_path, class: "regist-link" %>
+      </div>
     </div>
   </div>
 </div>

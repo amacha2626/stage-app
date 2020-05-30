@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
+    @theatrecompanies = TheatreCompany.where(founder_id: params[:id])
   end
 
   def edit
