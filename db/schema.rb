@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_150637) do
   create_table "theatre_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "name_kana", null: false
+    t.string "image"
     t.integer "postal_code", null: false
     t.string "prefecture", null: false
     t.string "address", null: false
