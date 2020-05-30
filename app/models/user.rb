@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :caption, length: { maximum: 200 }
 
   mount_uploader :image, ImageUploader
+
+  has_one :founder_theatrecompany, foreign_key: "fonder_id", class_name: 'TheatreCompany'
 end
