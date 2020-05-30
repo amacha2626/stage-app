@@ -1,0 +1,17 @@
+<div class="theatrecompany-show">
+  <div class="theatrecompany-data">
+    <div class="theatrecompany-image">
+      <%= image_tag "#{@theatrecompany.image}" %>
+    </div>
+    <div class="explanation">
+      <span class="username"><%= @theatrecompany.name %></span>
+      <p class="caption"><%= @theatrecompany.profile %></p>
+    </div>
+  </div>
+  <p>所属メンバー</p>
+  <div class="members">
+    <%= link_to @theatrecompany.founder.name, user_path(@theatrecompany.founder.id) %>
+    <br>
+    <%= image_tag "#{@theatrecompany.founder.image}" %>
+  </div>
+</div>

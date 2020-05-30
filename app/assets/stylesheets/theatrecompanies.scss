@@ -6,3 +6,33 @@
   width: 1000px;
   margin: 0 auto;
 }
+
+.theatrecompany-show{
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.theatrecompany-data{
+  display:flex;
+  margin: 20px 0;
+  padding: 20px 0;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.theatrecompany-image{
+  margin-right: 20px;
+}
+
+.theatrecompany-image img{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.members img{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}

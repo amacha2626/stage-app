@@ -64,12 +64,23 @@
   margin: auto;
 }
 
-.regist-theatre-company{
+.regist-theatre-company-right{
   position: absolute;
   top: 20px;
   right: 0;
-  text-decoration: underline;
   font-size: 14px;
+  text-align: right;
+}
+
+.regist-theatre-company-right a{
+  text-decoration: underline;
   cursor: pointer;
+}
+
+.belongs-link{
   color: #000;
+}
+
+.regist-link{
+  color: #696969;
 }
