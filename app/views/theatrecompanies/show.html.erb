@@ -7,11 +7,29 @@
       <span class="username"><%= @theatrecompany.name %></span>
       <p class="caption"><%= @theatrecompany.profile %></p>
     </div>
+    <%= link_to '/' do %>
+      <p class="profile-btn edit">編集</p>
+    <% end %>
   </div>
-  <p>所属メンバー</p>
-  <div class="members">
-    <%= link_to @theatrecompany.founder.name, user_path(@theatrecompany.founder.id) %>
-    <br>
-    <%= image_tag "#{@theatrecompany.founder.image}" %>
+  <div class="contents-wrapper">
+    <p class="title">公演</p>
+    <div class="performance">
+      <%= image_tag "#{@theatrecompany.founder.image}" %>
+      <div class="performance-detail">
+        <p class="performance-title">公演名</p>
+        <p>劇団名</p>
+        <p>劇場名</p>
+        <p>2020/5/30 (土) ~ 2020/6/15 (月)</p>
+        <p>¥ 3,000 ~ 6,000</p>
+      </div>
+    </div>
+  </div>
+  <div class="contents-wrapper">
+    <p class="title">所属メンバー</p>
+    <div class="members">
+      <%= link_to @theatrecompany.founder.name, user_path(@theatrecompany.founder.id) %>
+      <br>
+      <%= image_tag "#{@theatrecompany.founder.image}" %>
+    </div>
   </div>
 </div>
