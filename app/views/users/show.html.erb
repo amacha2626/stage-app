@@ -19,8 +19,11 @@
         <% end %>
       <% end %>
       <div class="regist-theatre-company-right">
-        <% @theatrecompanies.each do |theatrecompany| %>
+        <% @theatrecompanies.each_with_index do |theatrecompany, index| %>
           <%= link_to theatrecompany.name, theatrecompany_path(theatrecompany.id), class: "belongs-link"%>
+          <% if index < (@theatrecompanies.length - 1) %>
+          、
+          <% end %>
         <% end %>
         所属<br>
         <%= link_to '劇団を登録する', new_theatrecompany_path, class: "regist-link" %>
