@@ -1,0 +1,28 @@
+<div class="regist-theatre-company-form">
+  <div class="regist-theatre-company-form-wrapper">
+    劇団登録ページ
+    <%= form_with model: @theatrecompany, url: theatrecompany_path, local: true do |f| %>
+      <p>劇団画像</p>
+      <%= f.file_field :image %>
+      <p>劇団名</p>
+      <%= f.text_field :name %>
+      <p>劇団名かな</p>
+      <%= f.text_field :name_kana %>
+      <p>郵便番号</p>
+      <%= f.text_field :postal_code %>
+      <p>都道府県</p>
+      <%= f.text_field :prefecture %>
+      <p>市町村番地</p>
+      <%= f.text_field :address %>
+      <p>ホームページ</p>
+      <%= f.text_field :website %>
+      <p>設立年</p>
+      <%= f.select :establish, [1,2,3,4,5] %>
+      <p>紹介文</p>
+      <%= f.text_field :profile %>
+      <p>問い合わせ</p>
+      <%= f.text_field :contact %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

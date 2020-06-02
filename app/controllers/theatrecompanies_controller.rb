@@ -1,5 +1,5 @@
 class TheatrecompaniesController < ApplicationController
-  before_action :set_theatrecompany, only: [:show]
+  before_action :set_theatrecompany, only: [:show, :edit, :update]
 
   def show
   end
@@ -15,6 +15,17 @@ class TheatrecompaniesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @theatrecompany.update(theatrecompany_params)
+      redirect_to theatrecompany_path(@theatrecompany.id)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def set_theatrecompany
@@ -22,7 +33,7 @@ class TheatrecompaniesController < ApplicationController
   end
 
   def theatrecompany_params
-    params.require(:theatre_company).permit(:name, :name_kana, :postal_code, :prefecture, :address, :website, :establish, :member_id, :profile, :contact).merge(founder_id: current_user.id)
+    params.require(:theatre_company).permit(:name, :name_kana, :image, :postal_code, :prefecture, :address, :website, :establish, :member_id, :profile, :contact).merge(founder_id: current_user.id)
   end
     
 end

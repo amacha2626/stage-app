@@ -7,7 +7,7 @@
       <span class="username"><%= @theatrecompany.name %></span>
       <p class="caption"><%= @theatrecompany.profile %></p>
     </div>
-    <%= link_to '/' do %>
+    <%= link_to edit_theatrecompany_path(@theatrecompany.id) do %>
       <p class="profile-btn edit">編集</p>
     <% end %>
   </div>
