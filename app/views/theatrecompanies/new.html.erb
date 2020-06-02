@@ -2,6 +2,8 @@
   <div class="regist-theatre-company-form-wrapper">
     劇団登録ページ
     <%= form_with model: @theatrecompany, url: theatrecompanies_path, local: true do |f| %>
+      <p>劇団画像</p>
+      <%= f.file_field :image %>
       <p>劇団名</p>
       <%= f.text_field :name %>
       <p>劇団名かな</p>
