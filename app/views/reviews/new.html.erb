@@ -1,2 +1,14 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="new-review">
+  <div class="new-review-wrapper">
+    レビュー投稿ページ
+    <%= form_with model: [@stage, @review], local: true do |f| %>
+      <p>レビュー内容</p>
+      <%= f.text_area :text %>
+      <p>満足度</p>
+      <%= f.select :score, [1,2,3,4,5], {include_blank: ''} %>
+      <p>ネタバレ</p>
+      <%= f.select :spoiler, [["あり", true],["なし", false]], {include_blank: ''} %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
