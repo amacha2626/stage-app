@@ -2,19 +2,14 @@
   <div class="contents-wrapper">
     <div class="now-stages">
       <p>上映中の舞台</p>
-      <div class="stages">
-        <div class="stage">
-          <img src="assets/dog.JPG" width="200px" height="250px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="200px" height="250px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="200px" height="250px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="200px" height="250px">
-        </div>
+      <div class="stages content">
+        <% @stages.each do |stage| %>
+          <%= link_to stage_path(stage.id) do %>
+            <div class="stage opacity">
+              <%= image_tag("#{stage.image}") %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="more-btn">
         もっと見る
@@ -26,14 +21,14 @@
   <div class="contents-wrapper">
     <div class="now-stages">
       <p>最近投稿されたレビュー</p>
-      <div class="stages">
-        <div class="stage">
+      <div class="reviews content">
+        <div class="review opacity">
           <img src="assets/dog.JPG" width="300px" height="250px">
         </div>
-        <div class="stage">
+        <div class="review">
           <img src="assets/dog.JPG" width="300px" height="250px">
         </div>
-        <div class="stage">
+        <div class="review">
           <img src="assets/dog.JPG" width="300px" height="250px">
         </div>
       </div>
@@ -47,25 +42,14 @@
   <div class="contents-wrapper">
     <div class="now-stages">
       <p>劇団一覧</p>
-      <div class="stages">
-        <div class="stage">
-          <img src="assets/dog.JPG" width="120px" height="150px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="120px" height="150px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="120px" height="150px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="120px" height="150px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="120px" height="150px">
-        </div>
-        <div class="stage">
-          <img src="assets/dog.JPG" width="120px" height="150px">
-        </div>
+      <div class="theatrecompanies content">
+        <% @theatrecompanies.each do |theatrecompany| %>
+          <%= link_to theatrecompany_path(theatrecompany.id) do %>
+            <div class="theatre-company opacity">
+              <%= image_tag("#{theatrecompany.image}") %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="more-btn">
         もっと見る
@@ -77,16 +61,14 @@
   <div class="contents-wrapper">
       <div class="now-stages">
         <p>人気のユーザー</p>
-        <div class="stages">
-          <div class="stage">
-            <img src="assets/dog.JPG" width="300px" height="250px">
-          </div>
-          <div class="stage">
-            <img src="assets/dog.JPG" width="300px" height="250px">
-          </div>
-          <div class="stage">
-            <img src="assets/dog.JPG" width="300px" height="250px">
-          </div>
+        <div class="users content">
+          <% @users.each do |user| %>
+            <%= link_to user_path(user.id) do %>
+              <div class="user opacity">
+                <%= image_tag("#{user.image}") %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
         <div class="more-btn">
           もっと見る

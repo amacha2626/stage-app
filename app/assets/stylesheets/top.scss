@@ -113,9 +113,28 @@ header{
   }
 }
 
-.stages{
+.content{
   display: flex;
   justify-content: space-between;
+}
+
+.opacity:hover{
+  opacity: 0.5;
+}
+
+.stage img{
+  width: 200px;
+  height: 250px;
+}
+
+.theatre-company img{
+  width: 120px;
+  height: 150px;
+}
+
+.user img{
+  width: 300px;
+  height: 250px;
 }
 
 .more-btn{
