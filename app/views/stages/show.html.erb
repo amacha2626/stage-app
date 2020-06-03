@@ -1,8 +1,13 @@
 <div class="stages">
   <div class="stages-wrapper">
     <div class="detail-container">
-      <%= image_tag "#{@stage.image}" %>
-      <div class="stage-detail">
+      <div class="stage-detail-left">
+        <%= image_tag "#{@stage.image}" %>
+        <%= link_to new_stage_review_path(@stage.id) do %>
+          <p>口コミを投稿する</p>
+        <% end %>
+      </div>
+      <div class="stage-detail-right">
         <p class="stage-title"><%= @stage.title %></p>
         <p><%= @stage.theatre_company.name %></p>
         <p><%= @stage.theater %></p>
@@ -15,6 +20,28 @@
         <p><%= @stage.website %></p>
         <p><%= @stage.explanation %></p>
         <p><%= @stage.etc %></p>
+      </div>
+    </div>
+    <div class="contents-wrapper">
+      <div class="title-wrapper">
+        <p class="title">
+          レビュー一覧
+        </p>
+        <% @stage.reviews.each do |review| %>
+          <%= image_tag "#{review.user.image}" %>
+          <p>
+            <%= review.user.name + "の感想" %>
+          </p>
+          <p><%= review.score %></p>
+          <p>
+            <% if review.spoiler %>
+              ネタバレあり
+            <% else %>
+              ネタバレなし
+            <% end %>
+          </p>
+          <p><%= review.text %></p>
+        <% end %>
       </div>
     </div>
   </div>
