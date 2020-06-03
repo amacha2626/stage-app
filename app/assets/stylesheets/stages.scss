@@ -1,3 +1,36 @@
 // Place all the styles related to the stages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.stages-wrapper{
+  width: 1000px;
+  margin: auto;
+}
+
+.detail-container{
+  margin: 40px 0;
+  display: flex;
+}
+
+.detail-container img{
+  width: 260px;
+  height: 364px;
+  margin-right: 40px;
+}
+
+.stage-title{
+  font-size: 30px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.stage-title::after{
+  content: '';
+  height: 2px;
+  width: 60px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  margin: auto;
+  background-color: #000;
+}
