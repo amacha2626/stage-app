@@ -1,0 +1,41 @@
+<div class="regist-stage-form">
+  <div class="regist-stage-form-wrapper">
+    公演登録ページ
+    <%= form_with model: @stage, local: true do |f| %>
+      <p>公演画像</p>
+      <%= f.file_field :image %>
+      <p>公演タイトル</p>
+      <%= f.text_field :title %>
+      <p>カテゴリー</p>
+      <%= f.select :category, ["演劇", "舞踏・バレエ", "歌舞伎・伝統芸能", "ミュージカル", "オペラ", "その他"], {include_blank: ''} %>
+      <p>劇団</p>
+      <%= f.select :theatre_company_id, @theatrecompanies, {include_blank: ''} %>
+      <p>公演開始日</p>
+      <%= f.date_select :startperiod %>
+      <p>公園終了日</p>
+      <%= f.date_select :lastperiod %>
+      <p>劇場</p>
+      <%= f.text_field :theater %>
+      <p>出演者</p>
+      <%= f.text_field :member %>
+      <p>脚本</p>
+      <%= f.text_field :writer %>
+      <p>演出家</p>
+      <%= f.text_field :director %>
+      <p>最低料金</p>
+      <%= f.text_field :lowestprice %>
+      <p>最高料金</p>
+      <%= f.text_field :highestprice %>
+      <p>サイト</p>
+      <%= f.text_field :website %>
+      <p>タイムテーブル</p>
+      <%= f.text_area :timetable %>
+      <p>説明</p>
+      <%= f.text_area :explanation %>
+      <p>その他注意事項</p>
+      <%= f.text_area :etc %>
+      <br>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
