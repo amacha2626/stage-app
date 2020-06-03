@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_140913) do
+ActiveRecord::Schema.define(version: 2020_06_03_173726) do
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "stage_id", null: false
+    t.integer "score", null: false
+    t.boolean "spoiler", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stage_id"], name: "index_reviews_on_stage_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "stages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -70,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_06_03_140913) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "reviews", "stages"
+  add_foreign_key "reviews", "users"
   add_foreign_key "stages", "theatre_companies"
   add_foreign_key "theatre_companies", "users", column: "founder_id"
   add_foreign_key "theatre_companies", "users", column: "member_id"
