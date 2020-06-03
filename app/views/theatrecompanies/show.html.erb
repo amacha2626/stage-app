@@ -10,9 +10,17 @@
     <%= link_to edit_theatrecompany_path(@theatrecompany.id) do %>
       <p class="profile-btn edit">編集</p>
     <% end %>
+    <div class="regist-theatre-company-right">
+        <%= link_to '公演を登録する', '/', class: "regist-link" %>
+      </div>
   </div>
   <div class="contents-wrapper">
-    <p class="title">公演</p>
+    <div class="title-wrapper">
+      <p class="title">
+        公演
+        <span class="title-all"><i class="fa fa-caret-right" aria-hidden="true"></i>すべて見る</span>
+      </p>
+    </div>
     <div class="performance">
       <%= image_tag "#{@theatrecompany.founder.image}" %>
       <div class="performance-detail">
@@ -25,11 +33,28 @@
     </div>
   </div>
   <div class="contents-wrapper">
-    <p class="title">所属メンバー</p>
+    <div class="title-wrapper">
+      <p class="title">
+        所属メンバー
+        <span class="title-all"><i class="fa fa-caret-right" aria-hidden="true"></i>すべて見る</span>
+      </p>
+    </div>
     <div class="members">
-      <%= link_to @theatrecompany.founder.name, user_path(@theatrecompany.founder.id) %>
-      <br>
-      <%= image_tag "#{@theatrecompany.founder.image}" %>
+      <div class="member">
+        <%= image_tag "#{@theatrecompany.founder.image}" %>
+        <br>
+        <%= link_to @theatrecompany.founder.name, user_path(@theatrecompany.founder.id) %>
+      </div>
+      <div class="member">
+        <%= image_tag "#{@theatrecompany.founder.image}" %>
+        <br>
+        <%= link_to @theatrecompany.founder.name, user_path(@theatrecompany.founder.id) %>
+      </div>
+      <div class="member">
+        <%= image_tag "#{@theatrecompany.founder.image}" %>
+        <br>
+        <%= link_to @theatrecompany.founder.name, user_path(@theatrecompany.founder.id) %>
+      </div>
     </div>
   </div>
 </div>
