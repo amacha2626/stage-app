@@ -10,4 +10,5 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   has_one :founder_theatrecompany, foreign_key: "fonder_id", class_name: 'TheatreCompany'
+  has_many :reviews
 end

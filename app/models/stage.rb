@@ -2,6 +2,7 @@ class Stage < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   belongs_to :theatre_company
+  has_many :reviews
 
   validates :title, presence: true
   validates :theater, presence: true
