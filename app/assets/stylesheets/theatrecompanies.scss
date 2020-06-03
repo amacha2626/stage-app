@@ -17,7 +17,6 @@
   margin-top: 20px;
   padding: 20px 0;
   position: relative;
-  border-bottom: 1px solid #eee;
 }
 
 .theatrecompany-image{
@@ -32,17 +31,48 @@
 
 .contents-wrapper{
   padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  // border-bottom: 1px solid #eee;
 }
 
-.members img{
-  height: 100px;
-  width: 100px;
+.members{
+  display: flex;
+}
+
+.member img{
+  height: 150px;
   object-fit: cover;
+}
+
+.member{
+  height: 180px;
+  border-left: 1px solid #eee;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.member:hover{
+  background-color: rgb(250, 250, 250);
+  opacity: 0.5;
+}
+
+.member a{
+  color: #000;
+  margin-left: 10px;
 }
 
 .performance{
   display: flex;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+
+.performance:hover{
+  background-color: rgb(250, 250, 250);
+  opacity: 0.5;
+}
+
+.performance-detail{
+  margin-top: 20px;
 }
 
 .performance img{
@@ -61,17 +91,18 @@
 
 .theatrecompany-show .title{
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
+  background-color: #eee;
+  padding: 5px 10px;
+  border-top: 1px solid rgb(219, 219, 219);
 }
 
-.theatrecompany-show .title::after{
-  content: '';
-    height: 2px;
-    width: 60px;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    margin: auto;
-    background-color: #000;
+.title-all{
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  color: rgb(85, 85, 85);
 }
