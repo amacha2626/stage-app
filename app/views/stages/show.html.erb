@@ -1,2 +1,21 @@
-<h1>Stages#show</h1>
-<p>Find me in app/views/stages/show.html.erb</p>
+<div class="stages">
+  <div class="stages-wrapper">
+    <div class="detail-container">
+      <%= image_tag "#{@stage.image}" %>
+      <div class="stage-detail">
+        <p class="stage-title"><%= @stage.title %></p>
+        <p><%= @stage.theatre_company.name %></p>
+        <p><%= @stage.theater %></p>
+        <p><%= @stage.startperiod %> ~ <%= @stage.lastperiod %></p>
+        <p>¥ <%= @stage.lowestprice %> ~ <%= @stage.highestprice %></p>
+        <p><%= @stage.category %></p>
+        <p><%= @stage.member %></p>
+        <p><%= @stage.writer %></p>
+        <p><%= @stage.director %></p>
+        <p><%= @stage.website %></p>
+        <p><%= @stage.explanation %></p>
+        <p><%= @stage.etc %></p>
+      </div>
+    </div>
+  </div>
+</div>
