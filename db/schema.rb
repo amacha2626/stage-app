@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 2020_06_03_140913) do
     t.string "member"
     t.string "writer"
     t.string "director"
-    t.integer "price", null: false
+    t.integer "lowestprice", null: false
+    t.integer "highestprice", null: false
     t.string "website"
     t.text "timetable"
     t.text "explanation", null: false

@@ -9,7 +9,8 @@ class CreateStages < ActiveRecord::Migration[5.2]
       t.string :member
       t.string :writer
       t.string :director
-      t.integer :price, null: false
+      t.integer :lowestprice, null: false
+      t.integer :highestprice, null: false
       t.string :website
       t.text :timetable
       t.text :explanation, null: false
