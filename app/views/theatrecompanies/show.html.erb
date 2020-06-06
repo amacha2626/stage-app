@@ -21,18 +21,18 @@
         <span class="title-all"><i class="fa fa-caret-right" aria-hidden="true"></i>すべて見る</span>
       </p>
     </div>
-    <div class="performance">
-      <% @theatrecompany.stages.each do |stage| %>
-        <%= image_tag "#{stage.image}" %>
+    <%= link_to stage_path(@stage.id) do %>
+      <div class="performance">
+        <%= image_tag "#{@stage.image}" %>
         <div class="performance-detail">
-          <p class="performance-title"><%= stage.title %></p>
-          <p><%= stage.theatre_company.name %></p>
-          <p><%= stage.theater %></p>
-          <p><%= stage.startperiod %> ~ <%= stage.lastperiod %></p>
-          <p>¥ <%= stage.lowestprice %> ~ <%= stage.highestprice %></p>
+          <p class="performance-title"><%= @stage.title %></p>
+          <p><%= @stage.theatre_company.name %></p>
+          <p><%= @stage.theater %></p>
+          <p><%= @stage.startperiod %> ~ <%= @stage.lastperiod %></p>
+          <p>¥ <%= @stage.lowestprice %> ~ <%= @stage.highestprice %></p>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
   <div class="contents-wrapper">
     <div class="title-wrapper">

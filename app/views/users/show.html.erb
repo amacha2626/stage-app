@@ -3,6 +3,7 @@
     <div class="user-data">
       <div class="image">
         <%= image_tag "#{@user.image}" %>
+        <%= render 'relationships/follow', user: @user %>
       </div>
       <div class="explanation">
         <span class="username"><%= @user.name %></span>

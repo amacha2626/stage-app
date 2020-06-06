@@ -41,6 +41,7 @@
             <% end %>
           </p>
           <p><%= review.text %></p>
+          <%= render 'likereviews/like', review: review %>
         <% end %>
       </div>
     </div>

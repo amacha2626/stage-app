@@ -1,0 +1,7 @@
+<% unless current_user == review.user.id %>
+  <% if review.like?(current_user) %>
+    <%= link_to 'いいねを外す', likereview_path(review_id: review.id), method: :delete %>
+  <% else %>
+    <%= link_to 'いいね', likereviews_path(review_id: review.id), method: :post %>
+  <% end %>
+<% end %>

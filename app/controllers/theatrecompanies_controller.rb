@@ -2,6 +2,7 @@ class TheatrecompaniesController < ApplicationController
   before_action :set_theatrecompany, only: [:show, :edit, :update]
 
   def show
+    @stage = @theatrecompany.stages.first
   end
 
   def new
