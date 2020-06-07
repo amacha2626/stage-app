@@ -3,12 +3,12 @@ class LikereviewsController < ApplicationController
 
   def create
     @review.like(current_user)
-    redirect_to root_path
+    redirect_to stage_path(@review.stage_id)
   end
 
   def destroy
     @review.unlike(current_user)
-    redirect_to root_path
+    redirect_to stage_path(@review.stage_id)
   end
 
   private
