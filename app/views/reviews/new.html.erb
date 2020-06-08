@@ -8,7 +8,7 @@
       <%= f.select :score, [1,2,3,4,5], {include_blank: ''} %>
       <p>ネタバレ</p>
       <%= f.select :spoiler, [["あり", true],["なし", false]], {include_blank: ''} %>
-      <%= f.submit %>
+      <%= f.submit value: "レビューする" %>
     <% end %>
   </div>
 </div>
