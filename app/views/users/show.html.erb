@@ -3,21 +3,18 @@
     <div class="user-data">
       <div class="image">
         <%= image_tag "#{@user.image}" %>
-        <%= render 'relationships/follow', user: @user %>
       </div>
       <div class="explanation">
         <span class="username"><%= @user.name %></span>
         <span class="userid">@<%= @user.username %></span>
         <p class="caption"><%= @user.caption %></p>
       </div>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && @user.id == current_user.id %>
         <%= link_to edit_user_path(current_user.id) do %>
           <p class="profile-btn edit">プロフィール編集</p>
         <% end %>
-      <% else %>
-        <%= link_to edit_user_path(current_user.id) do %>
-          <p class="profile-btn follow">フォローする</p>
-        <% end %>
+      <% elsif user_signed_in? %>
+        <%= render 'relationships/follow', user: @user %>
       <% end %>
       <div class="regist-theatre-company-right">
         <% @theatrecompanies.each_with_index do |theatrecompany, index| %>
