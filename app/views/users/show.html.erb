@@ -14,7 +14,9 @@
           <p class="profile-btn edit">プロフィール編集</p>
         <% end %>
       <% elsif user_signed_in? %>
-        <%= render 'relationships/follow', user: @user %>
+        <p class="profile-btn edit">
+          <%= render 'relationships/follow', user: @user %>
+        </p>
       <% end %>
       <div class="regist-theatre-company-right">
         <% @theatrecompanies.each_with_index do |theatrecompany, index| %>
